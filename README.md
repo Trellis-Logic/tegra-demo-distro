@@ -107,6 +107,7 @@ demo applications.
 | Recipe name       | Description                                                   |
 | ----------------- | ------------------------------------------------------------- |
 | demo-image-base   | Basic image with no graphics                                  |
+| demo-image-docker | Basic image with no graphics, with docker support             |
 | demo-image-egl    | Base with DRM/EGL graphics, no window manager                 |
 | demo-image-sato   | X11 image with Sato UI                                        |
 | demo-image-weston | Wayland with Weston compositor                                |
