@@ -2,7 +2,9 @@
 set -e
 
 PROGNAME=$(basename $0)
-
+COMMAND=./doflash.sh
+BUILDDIR=build
+NOCLEANUP=""
 usage()
 {
     cat >&2 <<EOF
@@ -13,6 +15,12 @@ Options:
     -h, --h             Print this usage message
     -m, --machine       Set the MACHINE used for this script
     -i, --image         Set the IMAGE used for this script
+    -b, --builddir      Set the build dir used for deployment: default ${BUILDDIR}
+    -n, --nocleanup     Don't cleanup the temp directory after successful completion
+    -c, --command       Set the command to use when flashing: default ${COMMAND}
+                        other options:
+                            "sudo ./initrd-flash"
+                            "./initrd-flash"
 Examples:
 - To deploy a demo-image-base image for jetson-xavier-nx-devkit machine:
   $ $0 --machine jetson-xavier-nx-devkit  --image demo-image-base
@@ -20,8 +28,8 @@ EOF
 }
 
 # get command line options
-SHORTOPTS="hm:i:"
-LONGOPTS="help,machine:,image:"
+SHORTOPTS="hm:i:b:c:n"
+LONGOPTS="help,machine:,image:,builddir:,command:,nocleanup"
 
 ARGS=$(getopt --options $SHORTOPTS --longoptions $LONGOPTS --name $PROGNAME -- "$@" )
 if [ $? != 0 ]; then
@@ -36,6 +44,9 @@ do
         -h | --help)       usage; exit 0 ;;
         -m | --machine)    MACHINE="$2"; shift 2;;
         -i | --image)      IMAGE="$2"; shift 2;;
+        -b | --builddir)   BUILDDIR="$2"; shift 2;;
+        -n | --nocleanup)  NOCLEANUP="true"; shift 1;;
+        -c | --command)    COMMAND="$2"; shift 2;;
         -- )               shift; break ;;
         * )                break ;;
     esac
@@ -53,28 +64,32 @@ if [ -z "$IMAGE" ]; then
     exit 1
 fi
 
-echo "Using machine ${MACHINE} image ${IMAGE}"
+echo "Using machine ${MACHINE} image ${IMAGE} builddir ${BUILDDIR} and command ${COMMAND}"
 deployfile=${IMAGE}-${MACHINE}.tegraflash.tar.gz
 scriptdir=$(realpath $(dirname $0))
-tmpdir=`mktemp`
-rm -rf $tmpdir
-mkdir -p $tmpdir
+tmpdir=`mktemp -d /tmp/oe4t-tegraflash-XXXXX`
 echo "Using temp directory $tmpdir"
 currentdir=$(realpath .)
 cd $tmpdir
-cp $scriptdir/../../../build/tmp/deploy/images/${MACHINE}/$deployfile .
+cp $scriptdir/../../../${BUILDDIR}/tmp/deploy/images/${MACHINE}/$deployfile .
 tar -xvf $deployfile
 set +e
-./doflash.sh
+${COMMAND}
 rc=$?
+cd $currentdir
 if [ $rc -ne 0 ]; then
     if [ ! -e /etc/udev/rules.d/??-oe4t.rules ]; then
         echo "No rules file exists and flash failed."
         echo "You may need to run setup-udev-rules"
         echo "Or run this script as root"
     fi
+    echo "${COMMAND} failed, see temp directory at ${tmpdir}"
+else
+    if [ -z "${NOCLEANUP}" ]; then
+        echo "Cleaning up after success, removing temp directory $tmpdir"
+        rm -rf $tmpdir
+    else
+        echo "Skipping cleanup after success, see results in directory at ${tmpdir}"
+    fi
 fi
-cd $currentdir
-echo "Removing temp directory $tmpdir"
-rm -rf $tmpdir
 exit $rc
