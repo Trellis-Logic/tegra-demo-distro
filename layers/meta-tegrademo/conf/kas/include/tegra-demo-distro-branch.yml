@@ -1,0 +1,18 @@
+header:
+  version: 14
+
+repos:
+  meta-tegra:
+    branch: master
+
+  meta-openembedded:
+    branch: master
+
+  meta-tegra-community:
+    branch: master
+
+  meta-virtualization:
+    branch: master
+
+  poky:
+    branch: master
