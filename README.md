@@ -3,25 +3,27 @@
 Reference/demo distribution for NVIDIA Jetson platforms
 using Yocto Project tools and the [meta-tegra](https://github.com/OE4T/meta-tegra) BSP layer.
 
-![Build status](https://builder.madison.systems/badges/tegrademo-master.svg)
+**NOTE** that this is a **work-in-progress** branch for testing L4T R36.3.0/JetPack 6 GA.
+It is not suitable for production use.
+
+![Build status](https://builder.madison.systems/badges/tegrademo-wip-36-3-0.svg)
 
 Metadata layers are brought in as git submodules:
 
-| Layer Repo            | Branch         | Description                                         |
-| --------------------- | ---------------|---------------------------------------------------- |
-| poky                  | master         | OE-Core from poky repo at yoctoproject.org          |
-| meta-tegra            | master         | L4T BSP layer - L4T R35.5.0/JetPack 5.1.3           |
-| meta-tegra-community  | master         | OE4T layer with additions from the community        |
-| meta-openembedded     | master         | OpenEmbedded layers                                 |
-| meta-virtualization   | master         | Virtualization layer for docker support             |
+| Layer Repo            | Branch              | Description                                         |
+| --------------------- | --------------------|---------------------------------------------------- |
+| poky                  | master              | OE-Core from poky repo at yoctoproject.org          |
+| meta-tegra            | wip-l4t-r36.3.0-dp  | L4T BSP layer - L4T R36.3.0/JetPack 6.0 GA          |
+| meta-tegra-community  | wip-l4t-r36.3.0-dp  | OE4T layer with additions from the community        |
+| meta-openembedded     | master              | OpenEmbedded layers                                 |
+| meta-virtualization   | master              | Virtualization layer for docker support             |
 
 ## Prerequisites
 
 See the [Yocto Project Quick Build](https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html)
 documentation for information on setting up your build host.
 
-For burning SDcards (for Jetson Xavier NX developer kits), the `bmap-tools`
-package is recommended.
+For burning SDcards and initrd flashing, the `bmap-tools` package is recommended.
 
 ## Setting up
 
