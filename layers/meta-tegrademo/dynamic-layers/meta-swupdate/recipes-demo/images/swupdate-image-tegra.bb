@@ -33,6 +33,8 @@ KERNEL_B_DTB_PARTNAME:tegra194 = "kernel-dtb_b"
 
 # images to build before building swupdate image
 IMAGE_DEPENDS = "${SWUPDATE_CORE_IMAGE_NAME} tegra-uefi-capsules"
+do_build[depends] += "${DTB_EXTRA_DEPS}"
+DTBPATH="${STAGING_DIR_TARGET}/boot/devicetree/${DTBFILE}"
 
 # images and files that will be included in the .swu image
-SWUPDATE_IMAGES = "${ROOTFS_FILENAME} tegra-bl.cap ${DEPLOY_KERNEL_IMAGE} ${DTBFILE}"
+SWUPDATE_IMAGES = "${ROOTFS_FILENAME} tegra-bl.cap ${DEPLOY_KERNEL_IMAGE} ${DTBPATH}"
