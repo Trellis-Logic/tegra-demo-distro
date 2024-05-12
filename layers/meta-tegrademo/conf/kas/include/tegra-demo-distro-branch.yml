@@ -3,13 +3,13 @@ header:
 
 repos: 
   meta-tegra:
-    branch: master
+    branch: wip-l4t-r36.3.0
 
   meta-openembedded:
     branch: master
 
   meta-tegra-community:
-    branch: master
+    branch: wip-l4t-r36.3.0
 
   meta-virtualization:
     branch: master
