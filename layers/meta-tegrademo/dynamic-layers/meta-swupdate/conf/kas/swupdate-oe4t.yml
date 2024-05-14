@@ -1,0 +1,9 @@
+header:
+  version: 14
+  includes:
+    - layers/meta-tegrademo/dynamic-layers/meta-swupdate/conf/kas/include/swupdate-base.yml
+    - layers/meta-tegrademo/conf/kas/tegra-demo-distro.yml
+ 
+repos:
+  meta-swupdate:
+    branch: master

@@ -1,0 +1,27 @@
+header:
+  version: 14
+
+repos:
+  meta-swupdate:
+    branch: master
+    commit: c4c2eb938349cff018a5bb4b63d496e31d357026
+
+  meta-tegra:
+    branch: master
+    commit: ed09f0c792b70d14a002bbd1b74a635ae4572f30
+
+  meta-openembedded:
+    branch: master
+    commit: 24044fd3a010dba91f22e3b6af7788529f622795
+
+  meta-tegra-community:
+    branch: master
+    commit: bb5d1e18b747480a3a3d72a5f9e279a315339c85
+
+  meta-virtualization:
+    branch: master
+    commit: b7e77b69d309d8ee985720e88b19b6e9cf03fe63
+
+  poky:
+    branch: master
+    commit: 25dcc55b74db02a0d614ae0416cfd68e4ea35a51

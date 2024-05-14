@@ -1,0 +1,51 @@
+header:
+  version: 14
+  includes:
+    - repo: meta-tegrademo
+      file: conf/kas/include/tegra-demo-distro-branch.yml
+
+repos: 
+  meta-tegra-support:
+    path: layers/meta-tegra-support
+
+  meta-tegrademo:
+    path: layers/meta-tegrademo
+
+  meta-demo-ci:
+    path: layers/meta-demo-ci
+
+  meta-tegra:
+    path: repos/meta-tegra
+    url: https://github.com/OE4T/meta-tegra.git
+
+  meta-openembedded:
+    path: repos/meta-openembedded
+    url: https://git.openembedded.org/meta-openembedded
+    layers:
+      meta-filesystems:
+      meta-networking:
+      meta-python:
+      meta-oe:
+
+
+  meta-tegra-community:
+    path: repos/meta-tegra-community
+    url: https://github.com/OE4T/meta-tegra-community
+
+  meta-virtualization:
+    path: repos/meta-virtualization
+    url: https://git.yoctoproject.org/meta-virtualization
+
+  poky:
+    path: repos/poky
+    url: https://git.yoctoproject.org/poky
+    layers:
+      meta:
+
+local_conf_header:
+  tegra: |
+    # these two classes only work as intended when being inherited in the
+    # OE4t setup-env.sh style environment, as they modify bblayers.conf
+    # and expect additional information on the host.
+    INHERIT:remove = "tegra-support-sanity distro_layer_buildinfo" 
+    EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
