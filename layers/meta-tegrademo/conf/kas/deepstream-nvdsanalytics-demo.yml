@@ -1,0 +1,12 @@
+header:
+  version: 14
+  includes:
+    - layers/meta-tegrademo/conf/kas/tegra-demo-distro.yml
+    - layers/meta-tegrademo/dynamic-layers/meta-swupdate/conf/kas/include/swupdate-base.yml
+
+machine: jetson-orin-nano-devkit-nvme
+
+local_conf_header:
+    deepstream-demo: |
+      IMAGE_INSTALL:append = " deepstream-6.3-pyds-nvdsanalytics-demo"
+      SWUPDATE_CORE_IMAGE_NAME = "demo-image-sato"
