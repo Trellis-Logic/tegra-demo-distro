@@ -3,16 +3,16 @@ header:
 
 repos: 
   meta-tegra:
-    branch: master
+    branch: scarthgap
 
   meta-openembedded:
-    branch: master
+    branch: scarthgap
 
   meta-tegra-community:
-    branch: master
+    branch: scarthgap
 
   meta-virtualization:
-    branch: master
+    branch: scarthgap
 
   poky:
-    branch: master
+    branch: scarthgap
