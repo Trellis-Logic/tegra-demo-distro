@@ -3,16 +3,16 @@ header:
 
 repos: 
   meta-tegra:
-    branch: master
+    branch: kirkstone
 
   meta-openembedded:
-    branch: master
+    branch: kirkstone
 
   meta-tegra-community:
-    branch: master
+    branch: kirkstone
 
   meta-virtualization:
-    branch: master
+    branch: kirkstone
 
   poky:
-    branch: master
+    branch: kirkstone
