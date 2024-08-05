@@ -8,7 +8,7 @@ machine: jetson-orin-nano-devkit-nvme
 
 local_conf_header:
     deepstream-demo: |
-      IMAGE_INSTALL:append = " deepstream-6.3-pyds-nvdsanalytics-demo"
+      IMAGE_INSTALL:append = " deepstream-7.0-pyds-nvdsanalytics-demo"
       SWUPDATE_CORE_IMAGE_NAME = "demo-image-sato"
       # Remove 'blank' packageconfig from
       # https://github.com/yoctoproject/poky/blob/e575d02196b0013c25f8064e4dbe3fc2a0ef72d0/meta/recipes-graphics/x11-common/xserver-nodm-init_3.0.bb#L25
