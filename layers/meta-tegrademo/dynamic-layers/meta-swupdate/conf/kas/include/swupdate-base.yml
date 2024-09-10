@@ -11,7 +11,7 @@ repos:
   meta-swupdate:
     url: https://github.com/sbabic/meta-swupdate
     path: layers/meta-swupdate
-    branch: master
+    branch: scarthgap
 
 local_conf_header:
     swupdate-tegra: |
