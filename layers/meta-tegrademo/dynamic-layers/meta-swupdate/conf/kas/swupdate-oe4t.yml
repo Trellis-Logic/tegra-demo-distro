@@ -4,6 +4,6 @@ header:
     - layers/meta-tegrademo/dynamic-layers/meta-swupdate/conf/kas/include/swupdate-base.yml
     - layers/meta-tegrademo/conf/kas/tegra-demo-distro.yml
  
-repos:
-  meta-swupdate:
-    branch: master
+local_conf_header:
+    swupdate-customized: |
+        TNSPEC_BOOTDEV:jetson-xavier-nx-devkit-emmc = "nvme0n1p1"
