@@ -1,0 +1,263 @@
+/** @file
+*
+*  Copyright (c) 2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+*
+*  SPDX-License-Identifier: BSD-2-Clause-Patent
+*
+**/
+/dts-v1/;
+/plugin/;
+/ {
+    overlay-name = "UEFI Secure Boot Keys";
+    fragment@0 {
+        target-path = "/";
+        board_config {
+            sw-modules = "uefi";
+        };
+        __overlay__ {
+            firmware {
+                uefi {
+                    variables {
+                        gNVIDIAPublicVariableGuid {
+                            EnrollDefaultSecurityKeys {
+                                data = [01];
+                                non-volatile;
+                            };
+                        };
+                        gEfiGlobalVariableGuid {
+                            PKDefault {
+                                data = [
+ a1 59 c0 a5 e4 94 a7 4a 87 b5 ab 15 5c 2b f0 72
+ 45 03 00 00 00 00 00 00 29 03 00 00 1a a3 db cd
+ 51 df f5 4d bd 5b 29 f2 e6 36 24 6f 30 82 03 15
+ 30 82 01 fd a0 03 02 01 02 02 14 53 72 5e 90 30
+ 09 d6 1d 08 04 d0 a4 94 4b 38 ab 42 ee c9 bb 30
+ 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 30 1a
+ 31 18 30 16 06 03 55 04 03 0c 0f 6d 79 20 50 6c
+ 61 74 66 6f 72 6d 20 4b 65 79 30 1e 17 0d 32 35
+ 30 38 32 30 30 30 35 34 33 34 5a 17 0d 33 35 30
+ 38 31 38 30 30 35 34 33 34 5a 30 1a 31 18 30 16
+ 06 03 55 04 03 0c 0f 6d 79 20 50 6c 61 74 66 6f
+ 72 6d 20 4b 65 79 30 82 01 22 30 0d 06 09 2a 86
+ 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82
+ 01 0a 02 82 01 01 00 c1 df f2 96 bd ab 9c 52 a2
+ 2d 02 7b e6 bd 7e f5 6e bb 22 b9 3f 0a c8 97 86
+ 39 af 37 7a 41 dd e1 f5 a6 7a 71 71 c7 b2 c0 f0
+ 20 f8 98 61 5f 99 48 c1 78 97 0c 32 6d 5d 70 e6
+ a7 ae 2c fb 32 cd 71 be fa 5e d4 e7 fb 09 5e 82
+ 1b 78 35 4c 33 54 d1 6b ef fa 02 f9 eb 8c f0 15
+ 26 66 e1 05 78 3b e2 cc de 06 29 c0 77 8f a9 f9
+ 7a cc cf d3 79 0f 4d 00 07 66 d4 34 2d f8 ca bc
+ 47 15 b0 ff 96 d5 69 dc 91 65 e4 c7 25 26 c3 2d
+ 61 dd 0e 9e 4f 93 a4 8c 1c fe be 3a ca 93 e3 50
+ e0 30 a5 a4 b5 95 52 d7 e7 6a f2 ed 09 0e d4 a7
+ cb 13 ec 3e 81 65 b9 23 9c 25 75 89 ff 83 80 49
+ a8 aa c0 5a 46 ff 5d e4 a5 8c f4 02 38 b1 7b c5
+ 4d 08 49 27 ae b0 0f ab b0 c5 6a 03 cb a7 7c 54
+ c2 98 2b ef 7d 80 86 cc 21 30 8d 1d 08 a2 5a c3
+ 2c 8b 57 52 9f d3 2a 6a cc a9 64 92 94 94 80 f0
+ 4b e8 cd c9 14 93 97 02 03 01 00 01 a3 53 30 51
+ 30 1d 06 03 55 1d 0e 04 16 04 14 41 06 1a 6d cc
+ c7 ee 3e aa 06 95 3f 37 e4 bf 4c ad d3 26 76 30
+ 1f 06 03 55 1d 23 04 18 30 16 80 14 41 06 1a 6d
+ cc c7 ee 3e aa 06 95 3f 37 e4 bf 4c ad d3 26 76
+ 30 0f 06 03 55 1d 13 01 01 ff 04 05 30 03 01 01
+ ff 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00
+ 03 82 01 01 00 0c 07 c7 43 61 ea 0e 69 9e aa 3a
+ c3 4c 20 9e c5 c0 91 5b 29 c9 dd 09 8d a1 63 2c
+ d5 2c 3d 57 46 55 ad 24 db 7c 81 e0 59 ac c0 81
+ 6a b5 37 0f 0a 1e 76 80 77 40 97 ba 9d cd f8 28
+ 41 25 71 20 1c a8 90 50 f3 79 49 f0 57 03 53 00
+ bf ea be 4f e6 17 43 d4 3a b3 ea d0 8f 5e c1 86
+ 9d 0d ff b6 3b 0f 80 ee 4d e5 99 2a 72 7a ce 9e
+ e8 b6 1a ba 99 14 d5 8a 99 f5 91 44 4f 2b e6 40
+ b3 c1 4d 6e f3 d0 61 ab e0 21 6a 43 c0 01 e7 67
+ 4d cf 13 96 31 42 f6 f2 89 5a e8 8b 43 b4 ac fb
+ 62 e6 5a 9d 21 65 86 cf 4d a8 bd 16 4a fd e1 c2
+ 12 51 e0 78 c5 26 6c 58 04 6c 84 e6 ea dd c6 2f
+ 61 fa 32 a8 bd 86 ff 91 0e a5 69 b5 e7 16 2c ac
+ 77 cc 84 50 6d 4d 2c 15 56 32 a5 43 bf f7 24 58
+ 19 82 4d 99 e5 5d 86 5c 54 a1 92 4b b1 91 17 50
+ ba 49 a4 6a d0 cc 06 20 ce 62 79 f9 6b e6 7e bb
+ b0 25 71 84 fb
+                                ];
+                                non-volatile;
+                            };
+                            KEKDefault {
+                                data = [
+ a1 59 c0 a5 e4 94 a7 4a 87 b5 ab 15 5c 2b f0 72
+ 4d 03 00 00 00 00 00 00 31 03 00 00 1a a3 db cd
+ 51 df f5 4d bd 5b 29 f2 e6 36 24 6f 30 82 03 1d
+ 30 82 02 05 a0 03 02 01 02 02 14 5f 0b 5f 0a 39
+ be b3 4c e0 ba 46 f2 ed cb 7e c9 be ce 12 d9 30
+ 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 30 1e
+ 31 1c 30 1a 06 03 55 04 03 0c 13 6d 79 20 4b 65
+ 79 20 45 78 63 68 61 6e 67 65 20 4b 65 79 30 1e
+ 17 0d 32 35 30 38 32 30 30 30 35 35 30 31 5a 17
+ 0d 33 35 30 38 31 38 30 30 35 35 30 31 5a 30 1e
+ 31 1c 30 1a 06 03 55 04 03 0c 13 6d 79 20 4b 65
+ 79 20 45 78 63 68 61 6e 67 65 20 4b 65 79 30 82
+ 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05
+ 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 95
+ 53 9f c6 9b af b0 62 36 99 cd d6 68 7e 6f d4 9c
+ 9d 91 92 2e 53 f4 e0 a0 11 40 dd de b0 f9 12 96
+ 32 11 2a a6 f2 c0 96 6a ff 19 75 1c 19 fa b8 0e
+ 99 57 3f 5c aa 63 05 1f e6 b9 09 40 33 24 7f 58
+ 78 40 eb 96 7a 4a b9 d2 c2 77 1e 5e bb 02 61 97
+ c5 8a 80 70 ee 6f 6e 97 69 80 b9 fd 0a 02 53 d4
+ b3 3d ec 0b a8 39 d7 e2 78 e5 05 a9 ea f9 ef 81
+ 5b 1d 85 41 87 6c 56 f5 a8 c2 fc 8a 12 6a cd d8
+ f8 4c e2 43 81 48 f3 76 4e ff e2 a8 97 73 b3 33
+ 92 b3 88 27 a2 4a a7 50 22 2e 15 7c 26 e3 40 2c
+ 29 1f 06 ee 5c 93 c4 bd 74 62 41 e3 f8 fc 93 d0
+ dc c6 2c 99 fa ab f3 9c de 0d d4 1a 75 49 ab f4
+ 9f 03 4e 74 e5 8d 75 51 00 05 50 a9 d5 c7 1f a8
+ b1 05 fc 79 e4 36 60 de aa c2 00 07 6a bb 82 72
+ c8 b2 f5 54 00 07 c8 ff aa e2 b6 ce db 60 c4 58
+ a2 34 26 1d 16 51 f1 7a 52 7d 6d 9d 3f 27 8f 02
+ 03 01 00 01 a3 53 30 51 30 1d 06 03 55 1d 0e 04
+ 16 04 14 f8 53 6c 55 33 67 d7 c4 77 55 57 73 2c
+ 61 cb 07 55 75 24 99 30 1f 06 03 55 1d 23 04 18
+ 30 16 80 14 f8 53 6c 55 33 67 d7 c4 77 55 57 73
+ 2c 61 cb 07 55 75 24 99 30 0f 06 03 55 1d 13 01
+ 01 ff 04 05 30 03 01 01 ff 30 0d 06 09 2a 86 48
+ 86 f7 0d 01 01 0b 05 00 03 82 01 01 00 50 d8 9e
+ d8 17 54 40 59 69 c7 55 20 45 fe d8 21 e7 82 56
+ ec 6a 3c a9 0e b8 08 7b 5f b9 4a ab c7 50 d4 7b
+ 56 62 ab 27 6b 1f d1 4f a3 cd 4d f0 69 2b b2 a3
+ 4a 6a 75 a8 4a 30 e4 84 47 df 22 0d 4e 26 0b c9
+ de ac 61 e9 25 ff 4e 8c bc 90 85 ea 6f 4f c5 40
+ f3 71 24 bd c9 d4 72 3a d6 f8 c2 a3 59 e7 ec e9
+ bc 9d 1f ea ee 1c 4e 08 2e 5e 69 09 a4 6e bd ee
+ 8c 23 74 dc cd 68 07 0e 19 11 8c 00 ff 35 07 ea
+ 1f ee b0 ef 0a c2 43 b0 45 24 a6 9e b4 2d d2 01
+ 1a 67 b9 64 9d ab aa 56 c8 e6 87 6c e3 36 be 8b
+ fa 6e 7d f2 d7 c3 d1 d2 86 99 a5 01 1d 78 c4 88
+ 6f 4c 1c 92 a3 e0 c7 8f b9 20 58 51 8d 9d 13 21
+ 12 36 0a 5b c7 0c 20 61 49 86 f1 be cd 3b 5d 01
+ c6 d3 0d 93 c0 8e 8d f0 3e d3 42 d2 c2 b1 8d be
+ de 48 da 25 17 e3 91 b3 d1 3b 09 9d 28 e4 a5 36
+ 2a c6 bd b3 4b 9c b2 7d 90 84 8c 3b de
+                                ];
+                                non-volatile;
+                            };
+                            dbDefault {
+                                data = [
+ a1 59 c0 a5 e4 94 a7 4a 87 b5 ab 15 5c 2b f0 72
+ 59 03 00 00 00 00 00 00 3d 03 00 00 1a a3 db cd
+ 51 df f5 4d bd 5b 29 f2 e6 36 24 6f 30 82 03 29
+ 30 82 02 11 a0 03 02 01 02 02 14 51 86 cc b8 b2
+ 1d 3b b7 87 db ec 88 14 a2 e5 be 67 35 aa 25 30
+ 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 30 24
+ 31 22 30 20 06 03 55 04 03 0c 19 6d 79 20 53 69
+ 67 6e 61 74 75 72 65 20 44 61 74 61 62 61 73 65
+ 20 6b 65 79 30 1e 17 0d 32 35 30 38 32 30 30 30
+ 35 35 30 36 5a 17 0d 33 35 30 38 31 38 30 30 35
+ 35 30 36 5a 30 24 31 22 30 20 06 03 55 04 03 0c
+ 19 6d 79 20 53 69 67 6e 61 74 75 72 65 20 44 61
+ 74 61 62 61 73 65 20 6b 65 79 30 82 01 22 30 0d
+ 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01
+ 0f 00 30 82 01 0a 02 82 01 01 00 b0 16 88 00 d2
+ ac ad ed 1c 96 06 a9 bf 94 02 0f 0f 1f 1b d7 1f
+ 0e 6c 0b de 27 ce bf 32 0c 6e 18 f1 33 66 ad eb
+ 8a 72 17 f3 84 49 22 cf 9a 2e 9c 67 8f a4 3f 7b
+ 1f 17 7f 2e 5a f7 ed ac c9 fd 76 76 c8 a1 63 c5
+ 77 bd c3 7b 86 ca 0d 86 94 7a 91 b9 3d b7 24 57
+ 29 9b c4 58 c3 bb 12 57 56 95 12 f9 b9 43 0b 6c
+ eb 2f 95 be e1 ab f5 2a 13 56 04 6b 03 10 c9 20
+ 5d ab 1d 62 a7 00 d8 f1 33 db 46 d4 bf 56 bd 2a
+ 1e c7 99 50 b6 d8 7b 99 1d 57 d0 b1 fc a9 fa 12
+ 89 c4 b3 b9 bd 8b fd 77 f5 8c e4 e5 69 5a 81 e4
+ 5d 2a 1b 59 89 4c ea b1 0f 26 f5 1b 0f 17 fb d7
+ 97 59 b4 01 a6 92 20 b2 31 93 d7 57 6c 12 e2 04
+ 8f b9 e1 13 db 3d a3 b0 98 08 b2 a4 50 1f 35 e6
+ 16 91 ee 94 08 6e 41 ea e7 f0 f4 d3 a4 28 96 9b
+ c2 48 5d af 6d fa b6 06 33 bc c9 bc 4e 8d f5 51
+ f8 aa 51 54 6d 72 7e 16 76 17 87 02 03 01 00 01
+ a3 53 30 51 30 1d 06 03 55 1d 0e 04 16 04 14 f5
+ 04 8f 8f 15 e7 de 91 14 25 67 0c ab db 35 af bc
+ ea da 25 30 1f 06 03 55 1d 23 04 18 30 16 80 14
+ f5 04 8f 8f 15 e7 de 91 14 25 67 0c ab db 35 af
+ bc ea da 25 30 0f 06 03 55 1d 13 01 01 ff 04 05
+ 30 03 01 01 ff 30 0d 06 09 2a 86 48 86 f7 0d 01
+ 01 0b 05 00 03 82 01 01 00 a8 21 5c 1b 85 37 ca
+ f9 7b de a8 da f3 8e 22 be a9 4d e6 bc 85 df ae
+ 97 bf 2e 43 11 47 c7 e2 0b f4 36 be 66 c8 eb f2
+ c8 ea 64 6f ea 51 dd a8 34 23 8c 22 0f 91 65 f2
+ 8c db 98 bc 61 bd c0 4d 27 5e 97 58 44 aa ad 5b
+ 2d 54 42 71 1a f0 2a b4 cd 9b 93 84 ef de e8 83
+ 30 1c 55 26 96 66 9a 9e 44 ca 01 91 b5 cc ac ac
+ ed 95 fa 47 fb c3 78 b5 04 8f 68 8b a4 7d a3 94
+ 9b 4f 22 59 d8 dc fd f5 1d 9c 28 91 13 f9 a4 27
+ 26 94 1d 83 1a 3a 40 27 94 f6 40 1b 22 fd a7 ff
+ 5d 10 d9 c9 0d d2 85 1e 47 2f a7 04 8d 45 51 75
+ 36 f4 15 6c 41 05 20 15 34 28 65 aa cc 10 f8 0f
+ 64 d0 82 02 58 4a 91 27 3b ba 01 0d 75 fe 51 59
+ 2c f5 06 d2 7b 8d 60 db 8d ca 05 e9 88 39 79 51
+ 79 14 e0 0f 57 66 b8 25 d4 df 37 d4 9d 26 e6 d6
+ 40 f3 84 48 3b 0c ff 6c 86 dd 34 66 e6 6e 19 5e
+ 2e dd 4a 68 e2 6c 7d 6e 7a a1 59 c0 a5 e4 94 a7 4a 87 b5 ab 15 5c 2b f0 72
+ 69 03 00 00 00 00 00 00 4d 03 00 00 1a a3 db cd
+ 51 df f5 4d bd 5b 29 f2 e6 36 24 6f 30 82 03 39
+ 30 82 02 21 a0 03 02 01 02 02 14 4c ca 47 5c ee
+ 68 8b 3a cf 61 e2 cb 5a 96 10 44 ad b3 ce 6f 30
+ 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 30 2c
+ 31 2a 30 28 06 03 55 04 03 0c 21 6d 79 20 61 6e
+ 6f 74 68 65 72 20 53 69 67 6e 61 74 75 72 65 20
+ 44 61 74 61 62 61 73 65 20 6b 65 79 30 1e 17 0d
+ 32 35 30 38 32 30 30 30 35 35 31 31 5a 17 0d 33
+ 35 30 38 31 38 30 30 35 35 31 31 5a 30 2c 31 2a
+ 30 28 06 03 55 04 03 0c 21 6d 79 20 61 6e 6f 74
+ 68 65 72 20 53 69 67 6e 61 74 75 72 65 20 44 61
+ 74 61 62 61 73 65 20 6b 65 79 30 82 01 22 30 0d
+ 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01
+ 0f 00 30 82 01 0a 02 82 01 01 00 ed 01 53 01 63
+ 30 f2 bf d7 4f 47 e3 1e 0c d0 cf fc 55 d0 18 70
+ 64 db c2 85 b8 23 d0 b0 22 17 3c b7 51 33 f5 74
+ cd ab ee da 33 91 3c 2a 5b 46 39 e1 ef 90 51 3e
+ d4 a9 1c be 38 5f 07 90 c4 fe bb 37 45 d1 11 71
+ ab 33 00 e6 e1 31 f3 23 c8 48 cf 77 2a a5 c3 85
+ ed 20 02 b5 c3 62 d0 33 77 4d 53 45 f8 5c c2 d0
+ 01 8d 53 1c 95 ed 30 fe 9f 1c 88 2a 4e 5d 6f 69
+ 68 7d 69 9f 4c d3 bc 8f 5a cc 27 25 8e 0b 97 4f
+ a6 be 5b 8b c5 68 75 51 c3 e9 c3 2c 85 93 2e 24
+ 73 e3 27 d5 84 0d 4d 7a e0 20 ad e7 f8 58 85 fc
+ 7f c4 95 dc 37 7b 6a c0 1a b8 e7 ef 0e 89 bc 7e
+ 66 85 d8 5b 4e a9 12 3b 16 c3 70 7c ae bb 42 fe
+ 7a c0 e6 6b e4 87 91 31 ce 67 1e 3f f9 de f5 ae
+ 00 fb 40 db 67 55 8f db 2c d4 e1 9a 51 7a db 60
+ 3c db b9 36 6f 40 8d 83 8e 03 b6 83 4c d1 79 a6
+ 76 b5 8d ff ae 02 84 14 33 9f e5 02 03 01 00 01
+ a3 53 30 51 30 1d 06 03 55 1d 0e 04 16 04 14 b7
+ ff 67 4c d1 55 0b 5a d7 13 f7 11 8b f5 30 bb 4a
+ c9 aa b5 30 1f 06 03 55 1d 23 04 18 30 16 80 14
+ b7 ff 67 4c d1 55 0b 5a d7 13 f7 11 8b f5 30 bb
+ 4a c9 aa b5 30 0f 06 03 55 1d 13 01 01 ff 04 05
+ 30 03 01 01 ff 30 0d 06 09 2a 86 48 86 f7 0d 01
+ 01 0b 05 00 03 82 01 01 00 1d 32 0a 54 3a 04 d3
+ 8d a0 38 1b 0d 49 5f b9 36 c6 84 ca ab de 21 86
+ 51 ee 5a 25 e8 17 e9 e7 2d 0e f4 86 0a 45 f3 c1
+ f3 1f e6 d1 e6 58 6f bd b7 da 6d 47 54 91 ba 09
+ 93 8f b3 4c f2 27 2e c5 ae c5 84 75 31 fc b0 ef
+ f1 12 37 7e 55 a9 38 bd b6 11 e8 5f f1 79 62 e3
+ 54 b0 45 07 76 f3 84 c4 74 2d c1 1d 0a 44 0e a6
+ 63 23 c7 86 ec 75 52 39 9c f2 2a 54 1d 2a 37 c0
+ fb d6 4c cf 95 62 0b 5f 88 1e e9 4f a8 2c 3c a2
+ c4 3b 2f 50 e3 03 62 07 41 dc 7b bc 5a 23 14 20
+ 05 e0 6e 73 bd 7d 97 67 87 f6 d8 51 4c 02 ec e2
+ 59 f8 91 0c 26 c1 ad 87 85 27 54 9e 67 26 e2 81
+ c8 62 5d 54 4b b8 55 89 06 ee 97 80 8f d1 f9 15
+ ad 2e b6 b3 5d 36 25 97 a4 07 2c 96 fe 1c 54 6e
+ e1 24 cf 84 71 39 c0 fa 1d af b5 b3 0c e1 f0 65
+ 5f ea 6b 2d c7 3e 0f 9c 2d 60 3d a7 0e 2e 13 28
+ af 54 47 ba e9 72 bf ed 4d
+                                ];
+                                non-volatile;
+                            };
+                        };
+                    };
+                };
+            };
+        };
+    };
+};
