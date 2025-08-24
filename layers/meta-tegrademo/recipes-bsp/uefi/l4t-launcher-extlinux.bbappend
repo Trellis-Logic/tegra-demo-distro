@@ -1,0 +1,1 @@
+DEPENDS += "tegrademo-devicetree-overlay"
